@@ -32,3 +32,39 @@ public class Customer {
 
 List<Object> values = Arrays.asList(1, "John Doe", LocalDate.of(1990, 5, 1), "Gold", "Male", "1234567890", "johndoe@example.com", LocalDate.now(), "USA", "EST");
 Customer customer = new Customer(values);
+
+
+public String getZone() {
+    String zone;
+    switch (this.country.toLowerCase()) {
+        case "china":
+            zone = "Asia/Shanghai";
+            break;
+        case "japan":
+            zone = "Asia/Tokyo";
+            break;
+        case "india":
+            zone = "Asia/Kolkata";
+            break;
+        case "united states":
+            zone = "America/New_York";
+            break;
+        case "united kingdom":
+            zone = "Europe/London";
+            break;
+        case "france":
+            zone = "Europe/Paris";
+            break;
+        default:
+            // default to GMT if no timezone is found
+            zone = "GMT";
+            break;
+    }
+    return zone;
+}
+
+
+
+
+
+
